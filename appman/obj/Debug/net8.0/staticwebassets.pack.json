@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\obj\\Debug\\net8.0\\compressed\\0zpb5bzxva.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\obj\\Debug\\net8.0\\scopedcss\\bundle\\appman.styles.css",
+      "PackagePath": "staticwebassets\\appman.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\BOMAU\\OneDrive\\Desktop\\HandsOn\\appman\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.appman.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.appman.props",
+      "PackagePath": "build\\appman.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.appman.props",
+      "PackagePath": "buildMultiTargeting\\appman.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.appman.props",
+      "PackagePath": "buildTransitive\\appman.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

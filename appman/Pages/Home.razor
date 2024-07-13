@@ -1,0 +1,42 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components
+
+<PageTitle>Home</PageTitle>
+
+<h1>Welcome to the Counter App</h1>
+
+<p>
+    This app demonstrates a simple counter and some CPU and disk-intensive tasks. 
+    Below are the functionalities provided by this app:
+</p>
+
+<ul>
+    <li><strong>Counter:</strong> Increment the counter by 1 or 2.</li>
+    <li><strong>Increment by Loop:</strong> Increment the counter continuously in a loop.</li>
+    <li><strong>CPU Intensive Task:</strong> Simulate a CPU-intensive task.</li>
+    <li><strong>Disk Intensive Task:</strong> Simulate a disk-intensive task by writing data to a file.</li>
+</ul>
+
+<p>
+    Navigate to the <a href="/counter">Counter Page</a> to try out the functionalities.
+</p>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Counter App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/counter">Counter</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,115 @@
+﻿
+@page "/counter"
+@using System
+@using System.IO
+@using System.Text
+@using System.Threading
+@using System.Threading.Tasks
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount2">Click me 2</button>
+<button class="btn btn-primary" @onclick="IncrementCount3">Click me 3</button>
+<button class="btn btn-primary" @onclick="CpuIntensiveTask">CPU Intensive Task</button>
+<button class="btn btn-primary" @onclick="DiskIntensiveTask">Disk Intensive Task</button>
+
+<h2>Log Output</h2>
+<div style="white-space: pre-wrap; border: 1px solid black; padding: 10px; height: 200px; overflow-y: scroll;">
+    @logOutput
+</div>
+
+@code {
+    private int currentCount = 0;
+    private CancellationTokenSource? cancellationTokenSource;
+    private StringBuilder logBuilder = new StringBuilder();
+
+    private string logOutput => logBuilder.ToString();
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private void IncrementCount2()
+    {
+        currentCount += 2;
+    }
+
+    private async Task IncrementCount3()
+    {
+        cancellationTokenSource = new CancellationTokenSource();
+        var token = cancellationTokenSource.Token;
+
+        try
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if (token.IsCancellationRequested)
+                {
+                    Log("Loop stopped.");
+                    break;
+                }
+
+                currentCount++;
+                Log($"Current count: {currentCount}");
+                StateHasChanged();
+                await Task.Delay(2000, token);
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            Log("Operation canceled.");
+        }
+        finally
+        {
+            cancellationTokenSource.Dispose();
+            cancellationTokenSource = null;
+        }
+    }
+
+    private void CpuIntensiveTask()
+    {
+        // Simulate a CPU-intensive task
+        long result = 0;
+        for (long i = 0; i < 1_000_000_000; i++)
+        {
+            result += i;
+        }
+        Log($"CPU Intensive Task Result: {result}");
+    }
+
+    private async Task DiskIntensiveTask()
+    {
+        // Simulate a disk-intensive task
+        string filePath = Path.Combine(Path.GetTempPath(), "testfile.txt");
+
+        try
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true))
+            {
+                byte[] data = new byte[4096];
+                for (int i = 0; i < 10000; i++)
+                {
+                    await fs.WriteAsync(data, 0, data.Length);
+                }
+            }
+
+            Log("Disk Intensive Task Completed");
+        }
+        catch (Exception ex)
+        {
+            Log($"Disk Intensive Task Failed: {ex.Message}");
+        }
+    }
+
+    private void Log(string message)
+    {
+        logBuilder.Insert(0, message + Environment.NewLine);
+        StateHasChanged();
+    }
+}
